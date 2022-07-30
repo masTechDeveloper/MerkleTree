@@ -6,6 +6,7 @@ let whitelistAddress = [
   "0x97FA19643E35e66ec4cf15c483e3336217A58E12",
   "0x49f4d5778E7D14A3560407076de4E0dD2ec5DeD4",
   "0x4635B7475fD34de3D9f54359070a6755Ce0695b7",
+  "0x04D83E25Ec3464d7302c7EfD421AA7EaAa69ed59",
 ];
 
 async function generateRootHash() {
@@ -17,7 +18,7 @@ async function generateRootHash() {
 
   // Get Root Hash
   const rootHash = merkleTree.getRoot();
-  console.log("Root Hash   \n \n" + merkleTree.toString());
+  console.log("Root Hash   \n \n" + merkleTree.toString("hex"));
 
   // console.log("Root Hash Buffer = \n" + rootHash);
 }
