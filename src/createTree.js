@@ -1,13 +1,9 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
 
-let whitelistAddress = [
-  "0x46c669b59bD12A87A55a91cF7cb5bD87840B3002",
-  "0x97FA19643E35e66ec4cf15c483e3336217A58E12",
-  "0x49f4d5778E7D14A3560407076de4E0dD2ec5DeD4",
-  "0x4635B7475fD34de3D9f54359070a6755Ce0695b7",
-  "0x04D83E25Ec3464d7302c7EfD421AA7EaAa69ed59",
-];
+const { USERS } = require("../wl");
+
+let whitelistAddress = USERS;
 
 async function generateRootHash() {
   const leafNode = whitelistAddress.map((_add) => keccak256(_add));
